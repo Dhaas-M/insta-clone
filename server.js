@@ -10,7 +10,7 @@ const {MONGOURI} = require('./config/info')
 //create user
 //connect with project
 
-mongoose,connect(MONGOURI)
+mongoose.connect(MONGOURI)
 mongoose.connection.on('connected', () => {
     console.log('mongo connected...')
 })
