@@ -6,7 +6,7 @@ export default function Home() {
   const { state, dispatch } = useContext(UserContext)
   const [data, setData] = useState([])
   useEffect(() => {
-    fetch('http://localhost:4000/allPost', {
+    fetch('https://instagramclone69.herokuapp.com/allPost', {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('jwt')
       }
