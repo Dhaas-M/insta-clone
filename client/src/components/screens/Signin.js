@@ -34,7 +34,7 @@ export default function Signin() {
   const handleSubmit = async () => {
     if(image) await uploadPic()
      setUrl(temp);
-    fetch('http://localhost:4000/signup', {
+    fetch('https://instagramclone69.herokuapp.com/signup', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

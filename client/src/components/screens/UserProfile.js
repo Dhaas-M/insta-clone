@@ -10,7 +10,7 @@ export default function UserProfile() {
   //console.log(userId);
 
   useEffect( () => {
-    fetch(`http://localhost:4000/user/${userId}`, {
+    fetch(`https://instagramclone69.herokuapp.com/user/${userId}`, {
       headers: {
         'Authorization': 'Bearer '+localStorage.getItem('jwt')
       }
@@ -22,7 +22,7 @@ export default function UserProfile() {
   },[])
 
   const follow = () => {
-    fetch(`http://localhost:4000/follow`, {
+    fetch(`https://instagramclone69.herokuapp.com/follow`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export default function UserProfile() {
   }
 
   const unfollow = () => {
-    fetch(`http://localhost:4000/unFollow`, {
+    fetch(`https://instagramclone69.herokuapp.com/unFollow`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',

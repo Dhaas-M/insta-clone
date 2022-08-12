@@ -12,7 +12,7 @@ export default function Login() {
 
   const handleSubmit = () => {
     //console.log(email);
-    fetch('http://localhost:4000/signin', {
+    fetch('https://instagramclone69.herokuapp.com/signin', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

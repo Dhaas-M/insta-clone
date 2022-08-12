@@ -10,7 +10,7 @@ export default function AddPost() {
 
   useEffect(() => {
     if(url) {
-        fetch('http://localhost:4000/createPost', {
+        fetch('https://instagramclone69.herokuapp.com//createPost', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ export default function FollowersPost() {
     const {state, dispatch} = useContext(UserContext)
     const [data,setData] = useState([])
     useEffect( () => {
-        fetch('http://localhost:4000/followersPost', {
+        fetch('https://instagramclone69.herokuapp.com/followersPost', {
           headers: {
             'Authorization': 'Bearer '+localStorage.getItem('jwt')
           }
@@ -18,7 +18,7 @@ export default function FollowersPost() {
     }, [data])
   
     const like = (id) => {
-      fetch('http://localhost:4000/like', {
+      fetch('https://instagramclone69.herokuapp.com//like', {
         method: 'put',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ export default function FollowersPost() {
     }
   
     const unLike = (id) => {
-      fetch('http://localhost:4000/unLike', {
+      fetch('https://instagramclone69.herokuapp.com//unLike', {
         method: 'put',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export default function FollowersPost() {
     }
   
     const comment = (text, postId) => {
-      fetch('http://localhost:4000/comment', {
+      fetch('https://instagramclone69.herokuapp.com/comment', {
         method: 'put',
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ export default function FollowersPost() {
     }
   
     const deleteComment = (id,postId) => {
-      fetch(`http://localhost:4000/delete/${postId}`, {
+      fetch(`https://instagramclone69.herokuapp.com/delete/${postId}`, {
         method: 'put',
         headers: {
           'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ export default function FollowersPost() {
     }
   
     const deletePost = (id) => {
-      fetch(`http://localhost:4000/delete/${id}`, {
+      fetch(`https://instagramclone69.herokuapp.com/delete/${id}`, {
         method: 'delete',
         headers: {
           'Authorization': 'Bearer '+localStorage.getItem('jwt')
