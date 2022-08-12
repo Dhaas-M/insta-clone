@@ -8,13 +8,8 @@ const User = mongoose.model('User')
 //middleware
 const requireLogin = require('../middleware/requireLogin')
 
-router.get('/', (req,res) => {
-    res.send('ok')
-})
 
-
-
-router.post('/signup', async (req,res) => {
+router.post('/', async (req,res) => {
     const { name, email, password, url} = req.body
     if(!name || !email || !password) return res.json({"error": "fill"})
     
