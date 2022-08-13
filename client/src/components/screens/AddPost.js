@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function AddPost() {
-  const host = 'https://instagramclone69.herokuapp.com'
+  //const host = 'https://instagramclone69.herokuapp.com'
   //const host = 'http://localhost:4000'
   const navigate = useNavigate()
   const [title,setTitle] = useState('')
@@ -12,7 +12,7 @@ export default function AddPost() {
 
   useEffect(() => {
     if(url) {
-        fetch(`${host}/createPost`, {
+        fetch(`https://instagramclone69.herokuapp.com/createPost`, {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
