@@ -37,7 +37,7 @@ export default function Profile() {
       console.log(data);
       setUrl(data.url)
 
-      fetch(`${host}/updatePic`,{
+      fetch(`https://instagramclone69.herokuapp.com/updatePic`,{
         method: 'put',
         headers: {
           'Content-Type': 'application/json',
