@@ -3,13 +3,15 @@ import { UserContext } from '../../App'
 
 export default function Profile() {
 
+  const host = 'https://instagramclone69.herokuapp.com'
+  //const host = 'http://localhost:4000'
   const {state, dispatch} = useContext(UserContext)
   const [data, setData] = useState([])
   const [image,setImage] = useState('')
   const [url,setUrl] = useState('')
 
   useEffect( () => {
-    fetch('http://localhost:4000/myPosts', {
+    fetch(`${host}/myPosts`, {
       headers: {
         'Authorization': 'Bearer '+localStorage.getItem('jwt')
       }
@@ -35,7 +37,7 @@ export default function Profile() {
       console.log(data);
       setUrl(data.url)
 
-      fetch('https://instagramclone69.herokuapp.com/updatePic',{
+      fetch(`${host}/updatePic`,{
         method: 'put',
         headers: {
           'Content-Type': 'application/json',

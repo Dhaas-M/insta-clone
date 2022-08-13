@@ -4,6 +4,8 @@ import {Link,  useNavigate} from 'react-router-dom'
 let temp;
 
 export default function Signin() {
+  const host = 'https://instagramclone69.herokuapp.com'
+  //const host = 'http://localhost:4000'
   const navigate = useNavigate()
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
@@ -34,7 +36,7 @@ export default function Signin() {
   const handleSubmit = async () => {
     if(image) await uploadPic()
      setUrl(temp);
-    fetch('https://instagramclone69.herokuapp.com/signup', {
+    fetch(`${host}/signup`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

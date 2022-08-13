@@ -3,10 +3,12 @@ import { UserContext } from '../../App'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
+  const url = 'https://instagramclone69.herokuapp.com'
+  //const url = 'http://localhost:4000'
   const { state, dispatch } = useContext(UserContext)
   const [data, setData] = useState([])
   useEffect(() => {
-    fetch('https://instagramclone69.herokuapp.com/allPost', {
+    fetch(`${url}/allPost`, {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('jwt')
       }
@@ -18,7 +20,7 @@ export default function Home() {
   }, [data])
 
   const like = (id) => {
-    fetch('https://instagramclone69.herokuapp.com/like', {
+    fetch(`${url}/like`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +41,7 @@ export default function Home() {
   }
 
   const unLike = (id) => {
-    fetch('https://instagramclone69.herokuapp.com/unLike', {
+    fetch(`${url}/unLike`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
@@ -59,7 +61,7 @@ export default function Home() {
   }
 
   const comment = (text, postId) => {
-    fetch('https://instagramclone69.herokuapp.com/comment', {
+    fetch(`${url}/comment`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
@@ -80,7 +82,7 @@ export default function Home() {
   }
 
   const deleteComment = (id, postId) => {
-    fetch(`https://instagramclone69.herokuapp.com/delete/${postId}`, {
+    fetch(`${url}/delete/${postId}`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
@@ -100,7 +102,7 @@ export default function Home() {
   }
 
   const deletePost = (id) => {
-    fetch(`https://instagramclone69.herokuapp.com//delete/${id}`, {
+    fetch(`${url}/delete/${id}`, {
       method: 'delete',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('jwt')

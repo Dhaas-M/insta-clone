@@ -5,6 +5,8 @@ import { UserContext } from '../../App'
 
 
 export default function Login() {
+  const url = 'https://instagramclone69.herokuapp.com'
+  //const url = 'http://localhost:4000'
   const {state, dispatch} = useContext(UserContext)
   const navigate = useNavigate()
   const [email,setEmail] = useState('')
@@ -12,7 +14,7 @@ export default function Login() {
 
   const handleSubmit = () => {
     //console.log(email);
-    fetch('https://instagramclone69.herokuapp.com/signin', {
+    fetch(`${url}/signin`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

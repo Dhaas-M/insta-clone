@@ -3,14 +3,15 @@ import { UserContext } from '../../App'
 import { useParams } from 'react-router-dom'
 
 export default function UserProfile() {
-
+  const url = 'https://instagramclone69.herokuapp.com'
+  //const url = 'http://localhost:4000'
   const {state, dispatch} = useContext(UserContext)
   const [profile, setProfile] = useState(null)
   const { userId } = useParams()
   //console.log(userId);
 
   useEffect( () => {
-    fetch(`https://instagramclone69.herokuapp.com/user/${userId}`, {
+    fetch(`${url}/user/${userId}`, {
       headers: {
         'Authorization': 'Bearer '+localStorage.getItem('jwt')
       }
@@ -22,7 +23,7 @@ export default function UserProfile() {
   },[])
 
   const follow = () => {
-    fetch(`https://instagramclone69.herokuapp.com/follow`, {
+    fetch(`${url}/follow`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
@@ -48,7 +49,7 @@ export default function UserProfile() {
   }
 
   const unfollow = () => {
-    fetch(`https://instagramclone69.herokuapp.com/unFollow`, {
+    fetch(`${url}/unFollow`, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
